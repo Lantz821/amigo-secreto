@@ -50,14 +50,7 @@ function sortearAmigo(){
     comprobarArray();
     let amigoSorteado = amigos[Math.floor(Math.random() * amigos.length)];
     document.getElementById("resultado").innerHTML = "El amigo secreto es :" + amigoSorteado;
-    listaAmigos.innerHTML = "";    
-    return;
+    listaAmigos.innerHTML = "";   
+    return false;
 } 
 
-//Función para reiniciar el sorteo
-
-function reiniciarSorteo(){
-    setInterval(sortearAmigo, 2000);
-    console.log(reiniciarSorteo);
-    return;
-}
