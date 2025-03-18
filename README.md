@@ -6,10 +6,8 @@
 almacenados en una lista, para luego al hacer click en el boton sortear amigo, arrojara como resultado un nombre escogido de manera aleatoria mediante la función Math.random() y Math.floor()
 todo esto luego de verificar que la variable usada para almacenar los nombre tuviera datos correctos. </p>
 
-<p> Cumpli con las funciones que se pidieron, sin embargo aun creo que es un codigo que podria mejorar añadiendo por ejemplo una función a algun recurso para finalizar el proceso
-al darle ejecutar la función de sortearAmigo(), ya que actualmente si el usuario hace click mas de una vez en el boton de Sortear Amigo, arroja un resultado distinto cada vez y
-da como resultado una loop infinito repitiendo los datos.  </p>
-
+<p> Cumpli con las funciones que se pidieron, y corregi los primeros errores que consistian en que el juego era un loop infinito cada vez que le daba en sortear amigo.  </p>
+<p> en las imagenes de abajo era como lo complete la primera vez, sin los cambios; pero ahora logre finalizarlo y eestoy contento de haber encontrado una solucion. </p>  
 <p> Aca dejo algunas capturas de las funciones que implemente, cada una con comentarios explicando para que son: </p>
 
 ![Array](https://github.com/user-attachments/assets/2d777c4e-da58-4b21-9d97-3ea401f1c3ec)
