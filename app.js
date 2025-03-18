@@ -54,3 +54,9 @@ function sortearAmigo(){
     return false;
 } 
 
+function reiniciarSorteo(){
+    amigos = [];
+    document.getElementById("resultado").innerHTML = "";
+    mostrarAmigos();
+    return;
+}
