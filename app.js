@@ -1,15 +1,20 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 
-//Array para almacenar los nombres
+//Array para almacenar los nombres y si el sorteo ya se realizo
 let amigos =[];
+let sorteoRealizado = false; // Variable para controlar si ya se sorteó
 
 //Función para agregar un amigo
 
 function agregarAmigo(){
-    let nombre = document.getElementById("amigo").value;
+    let nombre = document.getElementById("amigo").value.trim();
     ///console.log(nombre);
     if(nombre === ""){
         alert("Por favor, ingresa un nombre");
+        return;
+    }
+    if (amigos.includes(nombre)) {
+        alert("Este nombre ya ha sido agregado.");
         return;
     }
     amigos.push(nombre);
@@ -28,10 +33,8 @@ function limpiarNombre(){
 //Función para mostrar los amigos en la lista
 function mostrarAmigos(){
     let listaAmigos = document.querySelector("#listaAmigos");
-    listaAmigos.innerHTML = "";
-    for(let i = 0; i < amigos.length; i++){
-        listaAmigos.innerHTML += `<li>${amigos[i]}</li>`;
-    }
+    listaAmigos.innerHTML = amigos.map(amigo => `<li>${amigo}</li>`).join("");
+    
    return; 
 }
 
@@ -40,8 +43,9 @@ function mostrarAmigos(){
 function comprobarArray(){
     if(amigos.length === 0){
         alert("No hay amigos en la lista");
+        return false;
     }
-   return;
+   return true;
 }
 
 //Función para sortear un amigo
@@ -50,13 +54,19 @@ function sortearAmigo(){
     comprobarArray();
     let amigoSorteado = amigos[Math.floor(Math.random() * amigos.length)];
     document.getElementById("resultado").innerHTML = "El amigo secreto es :" + amigoSorteado;
-    listaAmigos.innerHTML = "";   
-    return false;
+       
+    document.getElementById("sortearAmigo").disabled = true; // Deshabilita el botón de agregar amigo
+    
+    sorteoRealizado = true; //Marcamos que el sorteo ya se hizo
+    return;
 } 
+
+//Función para reiniciar el sorteo
 
 function reiniciarSorteo(){
     amigos = [];
-    document.getElementById("resultado").innerHTML = "";
-    mostrarAmigos();
-    return;
+    sorteoRealizado = false;
+    document.getElementById("resultado").innerHTML = ""; // Limpia el resultado
+    document.getElementById("listaAmigos").innerHTML = ""; // Limpia la lista de nombres
+    document.getElementById("sortearAmigo").disabled = false; // Habilita el botón de sorteo
 }
